@@ -171,6 +171,43 @@
   display: flex;
   justify-content: end;
 }
+
+.finalAnswers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001f3f;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.scoreText{
+  font-size: 3rem;
+}
+
+.totalScore{
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.dialogue{
+  font-size: 2rem;
+}
+
+.loading{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+
+}
+
+.correctAnswer{
+  background-color: green;
+}
  
 /*     Animations     */
 

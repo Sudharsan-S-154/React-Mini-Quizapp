@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
-import { GlobalContext } from "./assets/Context/MyContext";
+import { GlobalContext } from "./Context/MyContext";
 
 function StartQuiz() {
   const { clickOption } = useContext(GlobalContext);

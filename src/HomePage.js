@@ -3,7 +3,7 @@ import QuizImg from "./assets/QuizImg.png";
 import QuizTitles from "./QuizTitles";
 import { Routes, Route, Outlet } from "react-router";
 import StartQuiz from "./StartQuiz";
-import { GlobalContext } from "./assets/Context/MyContext";
+import { GlobalContext } from "./Context/MyContext";
 
 function HomePage() {
   const { isStart, setIsStart, clickOption, setClickOption } = useContext(GlobalContext);
