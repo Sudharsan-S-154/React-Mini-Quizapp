@@ -33,7 +33,7 @@ export const MyContext = ({ children }) => {
       try {
         // await new Promise((res) => setTimeout(res, 2000)); // 500ms delay
         const response = await axios.get(
-          "https://opentdb.com/api.php?amount=3&category=9&type=multiple"
+          "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
         );
         const allQuestionAnswer = response.data.results.map((item) => {
           return {
