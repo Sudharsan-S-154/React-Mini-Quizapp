@@ -15,7 +15,7 @@ function HomePage() {
         <StartQuiz />
       )}
       <section className="quizImg">
-        <img height="550px" width="550px" src={QuizImg}></img>
+        <img className="originalQuizImg" src={QuizImg}></img>
       </section>
     </article>
   );

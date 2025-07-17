@@ -29,8 +29,10 @@ function Answer() {
         <h2 className='scoreText'>Total Score</h2>
         <p className='totalScore'>{`${correctAnswer} / ${allAnswers.length}`}</p>
         <h2 className='dialogue'>{dialogue}</h2>
-        <button onClick={handlePlayAgain} >Play again</button>
-        <button onClick={handleShowAnswer}>Show Answer</button>
+        <div className='playAndShow'>
+        <button className="playAgain" onClick={handlePlayAgain} >Play again</button>
+        <button className="showAnswer" onClick={handleShowAnswer}>Show Answer</button>
+        </div>
     </section>
 
   )

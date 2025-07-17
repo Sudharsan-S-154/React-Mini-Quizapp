@@ -18,13 +18,16 @@ function AllQuiz() {
     setAnswer,
     handleQuestionChange,
     setPlayAgain,
-    playAgain
+    playAgain,
   } = useContext(GlobalContext);
 
   return (
     <section key={currentQuestion} className="allQuiz">
       {quesAns.length > 0 ? (
         <>
+          <div className="questionNumber">{` Question No. ${currentQuestion + 1} / ${
+            quesAns.length
+          }`}</div>
           <div className="question">{quesAns[currentQuestion].question}</div>
 
           <div className="allAnswer">
@@ -94,12 +97,12 @@ function AllQuiz() {
             </div>
           </div>
           <div className="next">
-            <button onClick={handleQuestionChange}> Next </button>
+            <button className="nextBtn" onClick={handleQuestionChange}> Next </button>
           </div>
         </>
       ) : (
         <div className="loading">
-         Loading.....
+          Loading.....
           {setPlayAgain(playAgain)}
         </div>
       )}

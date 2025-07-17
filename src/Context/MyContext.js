@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
-
+import he from "he";
 export const GlobalContext = createContext();
 
 export const MyContext = ({ children }) => {
@@ -31,10 +31,20 @@ export const MyContext = ({ children }) => {
   useEffect(() => {
     const getQuestions = async () => {
       try {
+        // await new Promise((res) => setTimeout(res, 2000)); // 500ms delay
         const response = await axios.get(
           "https://opentdb.com/api.php?amount=3&category=9&type=multiple"
         );
-        const allQuestionAnswer = response.data.results;
+        const allQuestionAnswer = response.data.results.map((item) => {
+          return {
+            ...item,
+            question: he.decode(item.question),
+            correct_answer: he.decode(item.correct_answer),
+            incorrect_answers: item.incorrect_answers.map((ans) =>
+              he.decode(ans)
+            ),
+          };
+        });
         setQuesAns(allQuestionAnswer);
         console.log("yayayayayy working....");
       } catch (e) {
@@ -164,7 +174,7 @@ export const MyContext = ({ children }) => {
         playAgain,
         setPlayAgain,
         handleShowAnswer,
-        handleQuestionChange1
+        handleQuestionChange1,
       }}
     >
       {children}
